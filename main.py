@@ -202,8 +202,8 @@ def tupla_graus(t):
 ##############################################################################################
 
 df = pd.read_csv("C:\\Users\\PC\\Desktop\\case mottu\\dados-filtrados.csv")
-# N = df.shape[0]
-N = 1000
+N = df.shape[0]
+# N = 10000
 
 (vertices, vizinhancas) = cria_grafo(df[0:N])
 vertices_indexados = vertices_indexados(vertices)
@@ -218,4 +218,5 @@ preenche_grafo_guloso(vertices, vizinhancas)
 
 vertices_indexados = agrupa_grafo(vertices_indexados, vizinhancas, 10)
 vertices_indexados_graus(vertices_indexados)
+np.set_printoptions(suppress=True)
 print(vertices_indexados)
